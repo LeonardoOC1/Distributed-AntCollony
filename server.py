@@ -8,7 +8,7 @@ from aco_core import build_graph, deposit_pheromone
 
 HOST = 'localhost'
 PORT = 9000
-NUM_CLIENTS = 2
+NUM_CLIENTS = 3
 NUM_ITERATIONS = 10
 NODES = [(random.uniform(-100, 100), random.uniform(-100, 100)) for _ in range(10)]
 INITIAL_PHEROMONE = 1.0
