@@ -1,5 +1,3 @@
-# server.py
-
 import socket
 import threading
 import pickle
@@ -8,9 +6,12 @@ from aco_core import build_graph, deposit_pheromone
 
 HOST = 'localhost'
 PORT = 9000
-NUM_CLIENTS = 3
+NUM_CLIENTS = 1
 NUM_ITERATIONS = 10
+
+random.seed(42)  # Semente fixa para gerar sempre o mesmo grafo
 NODES = [(random.uniform(-100, 100), random.uniform(-100, 100)) for _ in range(10)]
+
 INITIAL_PHEROMONE = 1.0
 RHO = 0.1
 
@@ -66,7 +67,6 @@ def start_server():
     
     with open("aco_result.pkl", "wb") as f:
         pickle.dump((NODES, best_tour, best_distance), f)
-
 
 if __name__ == '__main__':
     start_server()
